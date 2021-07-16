@@ -1,0 +1,7 @@
+stages:
+  load_data:
+    cmd: python src/load_data.py
+    deps:
+    - src/load_data.py
+    outs:
+    - output/data.pkl
