@@ -5,3 +5,19 @@ stages:
     - src/load_data.py
     outs:
     - output/data.pkl
+  train:
+    cmd: python src/train.py
+    deps:
+    - output/data.pkl
+    - src/train.py
+    params:
+    - train.batch_size
+    - train.dropout
+    - train.hidden_units
+    - train.lr
+    - train.num_epochs
+    outs:
+    - output/model.h5
+    plots:
+    - output/train_logs.csv:
+        cache: false
