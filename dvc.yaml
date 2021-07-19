@@ -21,3 +21,21 @@ stages:
     plots:
     - output/train_logs.csv:
         cache: false
+        template: linear
+        x: epoch
+        y: accuracy
+  evaluate:
+    cmd: python src/evaluate.py
+    deps:
+    - output/data.pkl
+    - output/model.h5
+    - src/evaluate.py
+    metrics:
+    - output/metrics.json:
+        cache: false
+    plots:
+    - output/predictions.json:
+        cache: false
+        template: confusion
+        x: actual
+        y: predicted
