@@ -29,9 +29,12 @@ num_epochs = params["num_epochs"]
 lr = params["lr"]
 
 # Model specific code
-x_train = np.reshape(x_train, [-1, input_size])
+x_train = x_train.reshape(-1, 28, 28, 1)
 x_train = x_train.astype('float32') / 255
 model = Sequential()
+model.add(Conv2D(filters=28, kernel_size=(3,3), activation='relu'))
+model.add(MaxPooling2D(pool_size=(2,2)))
+model.add(Flatten())
 model.add(Dense(hidden_units, activation='relu'))
 model.add(Dropout(dropout))
 model.add(Dense(num_labels, activation='softmax'))
