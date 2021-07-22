@@ -3,4 +3,4 @@ train:
   hidden_units: 64
   dropout: 0.40
   num_epochs: 10
-  lr: 0.01
+  lr: 0.001
