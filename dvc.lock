@@ -40,15 +40,15 @@ stages:
       md5: 35353c71da0985eed8bb507bbc53bd91
       size: 54950285
     - path: output/model.h5
-      md5: 257cbb82eb12c591bd7560d1b33f851f
+      md5: 7571c53065fec139c577b3a704d88147
       size: 3680480
     - path: src/evaluate.py
       md5: 56af2219bbc7599971432616d8afdf13
       size: 1161
     outs:
     - path: output/metrics.json
-      md5: a65d8ac1798fd98d2b14b7742c352eed
-      size: 61
+      md5: 811bfeafc62af257ce07e95a902bab75
+      size: 60
     - path: output/predictions.json
-      md5: 8955ae3ea64513046147faf64f7fd622
+      md5: d37d595c2bce2730042dc01f0d776b01
       size: 310000
