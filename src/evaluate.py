@@ -6,6 +6,7 @@ import numpy as np
 import tensorflow
 from tensorflow.keras.utils import to_categorical
 
+OUTPUT_DIR = "output"
 DATA_DIR = "data"
 fpath = os.path.join(DATA_DIR, "data.pkl")
 with open(fpath, "rb") as fd:
