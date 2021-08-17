@@ -6,8 +6,8 @@ import numpy as np
 import tensorflow
 from tensorflow.keras.utils import to_categorical
 
-OUTPUT_DIR = "output"
-fpath = os.path.join(OUTPUT_DIR, "data.pkl")
+DATA_DIR = "data"
+fpath = os.path.join(DATA_DIR, "data.pkl")
 with open(fpath, "rb") as fd:
     data = pickle.load(fd)
 (x_train, y_train), (x_test, y_test) = data

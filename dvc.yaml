@@ -4,11 +4,11 @@ stages:
     deps:
     - src/load_data.py
     outs:
-    - output/data.pkl
+    - data/data.pkl
   train:
     cmd: python src/train.py
     deps:
-    - output/data.pkl
+    - data/data.pkl
     - src/train.py
     params:
     - train.batch_size
@@ -27,7 +27,7 @@ stages:
   evaluate:
     cmd: python src/evaluate.py
     deps:
-    - output/data.pkl
+    - data/data.pkl
     - output/model.h5
     - src/evaluate.py
     metrics:
