@@ -2,6 +2,6 @@ train:
   batch_size: 128
   hidden_units: 128
   dropout: 0.45
-  num_epochs: 12
+  num_epochs: 8
   lr: 0.001
   string_param: string_param_2
