@@ -1,4 +1,6 @@
-import os, pickle
+import os
+import pickle
+
 from tensorflow.keras.datasets import fashion_mnist
 
 data = fashion_mnist.load_data()

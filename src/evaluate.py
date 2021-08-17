@@ -1,12 +1,16 @@
+import json
+import os
+import pickle
+
 import numpy as np
-import tensorflow, os, json, pickle, yaml
+import tensorflow
 from tensorflow.keras.utils import to_categorical
 
 OUTPUT_DIR = "output"
 fpath = os.path.join(OUTPUT_DIR, "data.pkl")
 with open(fpath, "rb") as fd:
     data = pickle.load(fd)
-(x_train, y_train),(x_test, y_test) = data
+(x_train, y_train), (x_test, y_test) = data
 labels = y_test.astype(int)
 y_test = to_categorical(y_test)
 
@@ -15,7 +19,7 @@ input_size = image_size * image_size
 
 # Model specific code
 x_test = x_test.reshape(-1, 28, 28, 1)
-x_test = x_test.astype('float32') / 255
+x_test = x_test.astype("float32") / 255
 # End of Model specific code
 
 model_file = os.path.join(OUTPUT_DIR, "model.h5")
@@ -30,7 +34,9 @@ with open(METRICS_FILE, "w") as f:
 
 pred_probabilities = model.predict(x_test)
 predictions = np.argmax(pred_probabilities, axis=1)
-all_predictions = [{"actual": int(actual), "predicted": int(predicted)} for actual, predicted in zip(labels, predictions)]
+all_predictions = [
+    {"actual": int(actual), "predicted": int(predicted)}
+    for actual, predicted in zip(labels, predictions)
+]
 with open("output/predictions.json", "w") as f:
     json.dump(all_predictions, f)
-
